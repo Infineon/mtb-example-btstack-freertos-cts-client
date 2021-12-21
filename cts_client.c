@@ -89,7 +89,7 @@ const char* day_of_week_str[]=
 static void ble_app_init(void);
 static void print_notification_data(wiced_bt_gatt_data_t notif_data);
 const  char* get_day_of_week(uint8_t day);
-static void button_interrupt_handler(void *handler_arg, cyhal_gpio_irq_event_t event);
+static void button_interrupt_handler(void *handler_arg, cyhal_gpio_event_t event);
 static wiced_bt_gatt_status_t ble_app_write_notification_cccd(bool notify);
 
 /* GATT Event Callback Functions */
@@ -99,6 +99,12 @@ static wiced_bt_gatt_status_t ble_app_gatt_event_callback(wiced_bt_gatt_evt_t  e
 static wiced_bt_gatt_status_t  ble_app_service_discovery_handler(wiced_bt_gatt_discovery_complete_t *discovery_complete);
 static wiced_bt_gatt_status_t  ble_app_discovery_result_handler(wiced_bt_gatt_discovery_result_t *discovery_result);
 
+/* Configure GPIO interrupt. */
+cyhal_gpio_callback_data_t button_cb_data =
+{
+.callback = button_interrupt_handler,
+.callback_arg = NULL
+};
 /*******************************************************************************
 * Function Name: app_bt_management_callback()
 ********************************************************************************
@@ -211,7 +217,7 @@ static void ble_app_init(void)
     }
 
     /* Configure GPIO interrupt. */
-    cyhal_gpio_register_callback(CYBSP_USER_BTN, button_interrupt_handler, NULL);
+    cyhal_gpio_register_callback(CYBSP_USER_BTN,&button_cb_data);
     cyhal_gpio_enable_event(CYBSP_USER_BTN, CYHAL_GPIO_IRQ_FALL,
                             BUTTON_INTERRUPT_PRIORITY, true);
 
@@ -246,7 +252,7 @@ static void ble_app_init(void)
 *   None
 *
 *******************************************************************************/
-void button_interrupt_handler(void *handler_arg, cyhal_gpio_irq_event_t event)
+void button_interrupt_handler(void *handler_arg, cyhal_gpio_event_t event)
 {
     BaseType_t xHigherPriorityTaskWoken;
     xHigherPriorityTaskWoken = pdFALSE;

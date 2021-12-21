@@ -10,7 +10,7 @@ Use this code example with [Bluetooth&reg; LE CTS server](https://github.com/Inf
 
 [View this README on GitHub.](https://github.com/Infineon/mtb-example-anycloud-ble-cts-client)
 
-[Provide feedback on this code example.](https://cypress.co1.qualtrics.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyMzAzMDQiLCJTcGVjIE51bWJlciI6IjAwMi0zMDMwNCIsIkRvYyBUaXRsZSI6IkJsdWV0b290aCZyZWc7IExFIENUUyBjbGllbnQiLCJyaWQiOiJuaGVnIiwiRG9jIHZlcnNpb24iOiIyLjAuMCIsIkRvYyBMYW5ndWFnZSI6IkVuZ2xpc2giLCJEb2MgRGl2aXNpb24iOiJNQ0QiLCJEb2MgQlUiOiJJQ1ciLCJEb2MgRmFtaWx5IjoiUFNPQyJ9)
+[Provide feedback on this code example.](https://cypress.co1.qualtrics.com/jfe/form/SV_1NTns53sK2yiljn?Q_EED=eyJVbmlxdWUgRG9jIElkIjoiQ0UyMzAzMDQiLCJTcGVjIE51bWJlciI6IjAwMi0zMDMwNCIsIkRvYyBUaXRsZSI6IkJsdWV0b290aCZyZWc7IExFIENUUyBjbGllbnQiLCJyaWQiOiJuaGVnIiwiRG9jIHZlcnNpb24iOiIzLjAuMCIsIkRvYyBMYW5ndWFnZSI6IkVuZ2xpc2giLCJEb2MgRGl2aXNpb24iOiJNQ0QiLCJEb2MgQlUiOiJJQ1ciLCJEb2MgRmFtaWx5IjoiQlRBQkxFIn0=)
 
 ## Requirements
 
@@ -33,7 +33,7 @@ Use this code example with [Bluetooth&reg; LE CTS server](https://github.com/Inf
 - [PSoC&trade; 62S1 Wi-Fi Bluetooth&reg; pioneer kit](https://www.cypress.com/CYW9P62S1-43012EVB-01) (`CYW9P62S1-43012EVB-01`)
 - [PSoC&trade; 62S3 Wi-Fi Bluetooth&reg; prototyping kit](https://www.cypress.com/CY8CPROTO-062S3-4343W) (`CY8CPROTO-062S3-4343W`)
 - [PSoC&trade; 64 "Secure Boot" Wi-Fi Bluetooth&reg; pioneer kit](https://www.cypress.com/CY8CKIT-064B0S2-4343W) (`CY8CKIT-064B0S2-4343W`)
-- [PSoC 62S2 Evaluation kit](https://www.cypress.com/documentation/development-kitsboards/psoc-62s2-evaluation-kit-cy8ceval-062s2) (`CY8CEVAL-062S2-LAI-4373M2`)
+- [PSoC&trade; 62S2 evaluation kit](https://www.cypress.com/CY8CEVAL-062S2) (`CY8CEVAL-062S2`, `CY8CEVAL-062S2-LAI-4373M2`, `CY8CEVAL-062S2-MUR-43439M2`)
 
 ## Hardware setup
 This example uses the board's default configuration. See the kit user guide to ensure that the board is configured correctly.
@@ -348,6 +348,7 @@ Document title: *CE230304* - *Bluetooth&reg; LE CTS client*
 | ------- | --------------------- |
 | 1.0.0   | New code example      |
 | 2.0.0   | Major update to support ModusToolbox software v2.3.1,<br />This version is not backward compatible with ModusToolbox&trade; software v2.2 or older versions, <br />Added support for new kits </br> Enabled for CYW43XXX Low power and addition of current number |
+| 3.0.0   | Added support for 43439 kit <br /> Updated BSP to 3.0.0|
 ------
 
 
